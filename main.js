@@ -1,4 +1,5 @@
 import { uiElements } from "./ui-components.js";
+import { sliderComponent } from "./slider.js";
 
 const points = [
     { x: 155, y: 340 },
@@ -10,7 +11,7 @@ const points = [
   
   let currentPoint = 0;
   
-  function movingToUniversity() {
+  const movingToUniversity = () => {
     uiElements.universityBtn.removeAttribute('disabled', '');
     if (currentPoint < points.length) {
           uiElements.universityBtn.setAttribute('disabled', '');
@@ -29,3 +30,5 @@ const points = [
     currentPoint = 0;
     movingToUniversity();
   });
+
+  sliderComponent();
