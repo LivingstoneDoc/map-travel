@@ -4,8 +4,15 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: url('./fonts/Roboto-Medium.ttf');
+  font-weight: normal;
+}
+
 body {
   background: url('./assets/img/bg.jpg') no-repeat center / cover;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -140,4 +147,151 @@ body {
 .btn-img {
   width: 100%;
   height: 100%;
+}
+
+.dialog {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  transform: translate(-50%, -100%);
+  width: 523px;
+  height: 455px;
+  border: none;
+  background: url('./assets/img/dialog-bg.png') center;
+  padding: 0;
+  overflow: visible;
+  transition: transform 0.5s ease-in-out;
+}
+
+.dialog.open {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dialog::backdrop {
+  background-color: #a69175;
+  opacity: 0.5;
+}
+
+.dialog .dialog-wrapper {
+  position: relative;
+  height: 100%;
+  padding: 95px 25px 35px;
+}
+
+.dialog .dialog-wrapper .dialog-title {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url('./assets/icons/dialog-header.png') center;
+  width: 263px;
+  height: 33px;
+  color: #FFF;
+  text-align: center;
+  line-height: 30px;
+  font-size: 25px;
+}
+
+.dialog .dialog-wrapper .dialog-close-btn {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 15px;
+  right: 18px;
+}
+
+.dialog .dialog-wrapper .dialog-close-btn:active {
+  box-shadow: 0px 3px 10px #00a2c4;
+}
+
+.dialog .dialog-wrapper .dialog-descr {
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+}
+
+.dialog-rating .dialog-wrapper .table-wrapper {
+  background-color: #8c5a31;
+  width: 464px;
+  height: 324px;
+  border-radius: 20px;
+  padding: 25px 30px;
+}
+
+.dialog-rating .dialog-wrapper .table-wrapper table {
+  width: 100%;
+  color: #FFF;
+  text-align: left;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+}
+
+.dialog-rating .dialog-wrapper table thead {
+  background: url('./assets/icons/table-header.png');
+  background-size: 100% 29px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 29px;
+  font-size: 14px;
+}
+
+.dialog-rating .dialog-wrapper table thead th {
+  font-weight: normal;
+}
+
+.dialog-rating .dialog-wrapper table thead .th-place {
+  width: 65px;
+}
+
+.dialog-rating .dialog-wrapper table thead .th-avatar {
+  width: 30px;
+}
+
+.dialog-rating .dialog-wrapper table thead th:first-child {
+  text-align: center;
+}
+
+.dialog-rating .dialog-wrapper table thead th {
+  padding-right: 5px;
+}
+
+.dialog-rating .dialog-wrapper table tbody tr {
+  background: url('./assets/icons/table-body-row.png');
+  background-size: 100% 27px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 27px;
+}
+
+.dialog-rating .dialog-wrapper table tbody tr td {
+  padding-right: 5px;
+  text-wrap: nowrap;
+}
+
+.dialog-rating .dialog-wrapper table tbody tr td:first-child {
+  text-align: center;
+  padding-left: 5px;
+}
+
+.dialog-rating .dialog-wrapper table tbody tr td:last-child {
+  padding-right: 5px;
+}
+
+.table-avatar-img {
+  width: 30px;
+  height: 30px;
+}
+
+.overflow-table-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.scroll-lock {
+  overflow: hidden;
 }
