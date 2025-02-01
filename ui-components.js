@@ -13,5 +13,7 @@ export const uiElements = {
     chatBtn: document.querySelector('.chat-btn'),
     mailBtn:document.querySelector('.mail-btn'),
     dialogCloseBtn: document.querySelectorAll('.dialog-close-btn'),
-    body: document.querySelector('body')
+    body: document.querySelector('body'),
+    playersTable: document.querySelector('.dialog-players-table'),
+    playersList: document.querySelector('.players-list')
 };

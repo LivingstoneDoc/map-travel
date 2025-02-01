@@ -295,3 +295,12 @@ body {
 .scroll-lock {
   overflow: hidden;
 }
+
+.empty-list-text {
+  display: flex;
+  justify-content: center;
+}
+
+.player-friend {
+  color: #7932ab;
+}
