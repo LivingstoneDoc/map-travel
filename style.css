@@ -94,10 +94,15 @@ body {
   transform: translateX(-50%);
 }
 
-.map-wrapper .navigation-wrapper .slider-wrapper .slider .slide .plus-icon {
+.map-wrapper .navigation-wrapper .slider-wrapper .slider .slide .add-friend-btn {
   position: absolute;
   right: 0;
   top: -5px;
+}
+
+.map-wrapper .navigation-wrapper .slider-wrapper .slider .slide .add-friend-btn .plus-icon {
+  width: 100%;
+  height: 100%;
 }
 
 .map-wrapper .navigation-wrapper .slider-wrapper .nav-btns .slider-btn {

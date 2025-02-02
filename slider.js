@@ -3,9 +3,9 @@ import { uiElements } from "./ui-components.js";
 export const sliderComponent = () => {
     let currentSliderIndex = 0;
     const totalSlides = uiElements.slides.length;
+    const slidesOnPage = 8;
 
     const nextSlide = () => {
-    const slidesOnPage = 8;
     let countSlides = slidesOnPage + currentSliderIndex;
 
     if (countSlides < totalSlides) {
@@ -21,6 +21,8 @@ export const sliderComponent = () => {
     const prevSlide = () => {
     if (currentSliderIndex > 0) {
         currentSliderIndex--;
+    } else {
+        currentSliderIndex =  totalSlides - slidesOnPage;
     }
     updateSlidePosition();
     }
