@@ -18,18 +18,27 @@ export const playersInfoComponent = () => {
     return friendsPlayers;
     }
 
+    const sortPlayersSkills = (players) => {
+        const sortedPlayers = players.sort((a, b) => b.points - a.points);
+        return sortedPlayers;
+    }
+
     const getPlayersInfo = () => {
         try {
             checkUsersList();
             const friendsPlayers = getFriendsPlayers();
             uiElements.playersList.innerHTML = '';
             const tableRowsFragment = document.createDocumentFragment();
-            
+            let place = 1;
+
+            sortPlayersSkills(data.rating);
+
             for (let player of data.rating) {
             const playerInfo = document.createElement('tr');
 
             const playerPlace = document.createElement('td');
-            playerPlace.textContent = '1';
+            playerPlace.textContent = place;
+            place++;
 
             const playerAvatar = document.createElement('td');
             playerAvatar.classList.add('td-avatar');
