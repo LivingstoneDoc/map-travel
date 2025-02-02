@@ -17,36 +17,54 @@ export const playersInfoComponent = () => {
     const friendsPlayers = data.rating.filter(element => friendsIds.has(element.id));
     return friendsPlayers;
     }
-    
+
     const getPlayersInfo = () => {
-    try {
-        checkUsersList();
-        const friendsPlayers = getFriendsPlayers();
-        uiElements.playersList.innerHTML = '';
-        const tableRowsFragment = document.createDocumentFragment();
-        for (let player of data.rating) {
-        const playerInfo = document.createElement('tr');
-        const playerPlace = document.createElement('td');
-        playerPlace.textContent = '1';
-        const playerAvatar = document.createElement('td');
-        playerAvatar.textContent = player.img;
-        const playerName = document.createElement('td');
-        playerName.textContent = `${player.name} ${player.lastName}`;
-        const playerSkill = document.createElement('td');
-        playerSkill.textContent = player.points;
-        playerInfo.append(playerPlace);
-        playerInfo.append(playerAvatar);
-        playerInfo.append(playerName);
-        playerInfo.append(playerSkill);
-        if (friendsPlayers.some(friendPlayer => friendPlayer.id === player.id)) {
-            playerInfo.classList.add('player-friend');
+        try {
+            checkUsersList();
+            const friendsPlayers = getFriendsPlayers();
+            uiElements.playersList.innerHTML = '';
+            const tableRowsFragment = document.createDocumentFragment();
+            
+            for (let player of data.rating) {
+            const playerInfo = document.createElement('tr');
+
+            const playerPlace = document.createElement('td');
+            playerPlace.textContent = '1';
+
+            const playerAvatar = document.createElement('td');
+            playerAvatar.classList.add('td-avatar');
+            const avatarBg = document.createElement('img');
+            avatarBg.classList.add('table-avatar-bg');
+            avatarBg.src = './assets/icons/table-avatar-bg.png';
+            avatarBg.alt = 'avatar-bg';
+            
+            const avatar = document.createElement('img');
+            avatar.classList.add('table-avatar');
+            avatar.src = `./assets/icons/${player.img}`;
+            avatar.alt = 'avatar-icon';
+            playerAvatar.append(avatarBg);
+            playerAvatar.append(avatar);
+
+            const playerName = document.createElement('td');
+            playerName.textContent = `${player.name} ${player.lastName}`;
+
+            const playerSkill = document.createElement('td');
+            playerSkill.textContent = player.points;
+            playerInfo.append(playerPlace);
+            playerInfo.append(playerAvatar);
+            playerInfo.append(playerName);
+            playerInfo.append(playerSkill);
+
+            if (friendsPlayers.some(friendPlayer => friendPlayer.id === player.id)) {
+                playerInfo.classList.add('player-friend');
+            }
+
+            tableRowsFragment.append(playerInfo);
+            }
+            uiElements.playersList.append(tableRowsFragment);
+        } catch(err) {
+            console.error(err);
         }
-        tableRowsFragment.append(playerInfo);
-        }
-        uiElements.playersList.append(tableRowsFragment);
-    } catch(err) {
-        console.error(err);
-    }
     };
     getPlayersInfo();
 }

@@ -304,3 +304,23 @@ body {
 .player-friend {
   color: #7932ab;
 }
+
+.td-avatar {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.table-avatar-bg {
+  width: 30px;
+  height: 30px;
+}
+
+.table-avatar {
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  transform: translate(50%);
+  width: 15px;
+  height: 20px;
+}
