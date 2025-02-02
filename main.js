@@ -1,9 +1,12 @@
-import { sliderComponent } from "./slider.js";
-import { dialogComponent } from "./dialog.js";
-import { mapComponent } from "./map.js";
-import { playersInfoComponent } from "./players-info.js";
+import { sliderComponent } from "./components/slider.js";
+import { dialogComponent } from "./components/dialog.js";
+import { mapComponent } from "./components/map.js";
+import { playersInfoComponent } from "./components/players-info.js";
 
-mapComponent();
-sliderComponent();
-dialogComponent();
-playersInfoComponent();
+const mapApp = () => {
+    mapComponent();
+    sliderComponent();
+    dialogComponent();
+    playersInfoComponent();
+}
+mapApp();
