@@ -329,3 +329,10 @@ body {
   width: 15px;
   height: 20px;
 }
+
+@media (max-width: 980px) {
+  body {
+    background: none;
+    background-color: #026e62;
+  }
+}
